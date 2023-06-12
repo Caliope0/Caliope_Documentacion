@@ -1,7 +1,7 @@
-import swaggerUi from 'swagger-ui-express'
-import { swaggerSpec } from './swagger.conf'
+/* eslint-disable linebreak-style */
 
-import App from "./Router"
+
+import App from './Router'
 
 //Crear un objeto de la clase App
 
