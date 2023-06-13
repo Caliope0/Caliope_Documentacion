@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 
 
-import App from './Router'
+import App from './App'
 
 //Crear un objeto de la clase App
 

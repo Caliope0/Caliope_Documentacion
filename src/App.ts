@@ -25,6 +25,9 @@ class App {
 		)
 		this.router()
 	}
+	/** 
+	 * definir las rutas de la API con express
+	 */
 	private router(): void {
 
 		this.app.get(
