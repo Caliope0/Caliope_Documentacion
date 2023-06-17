@@ -1,8 +1,10 @@
 /* eslint-disable linebreak-style */
 import swaggerUi from 'swagger-ui-express'
 import { swaggerSpec } from './swagger.conf'
-import express, { Application, Request, Response } from 'express'
+import express, { Application, Request, Response, } from 'express'
 
+import MedicoRouter from './routes/Medico.routes'
+import PacienteRouter from './routes/Paciente.router'
 /**
  * 
  * @autor John Alejandro Zúñiga
@@ -13,8 +15,10 @@ class App {
 	//Atributos
 	public app: Application
 	private server: any
+	
 
 	constructor() {
+		
 		this.app = express()
 
 		this.app.use(express.json())
@@ -30,22 +34,13 @@ class App {
 	 */
 	private router(): void {
 
-		this.app.get(
-			'/',
-			(req: Request, res: Response) => {
-				res.send('Bienvenidos a typescript')
-			}
-		)
-		this.app.get(
-			'/paciente',
-			(req: Request, res: Response) => {
-				res.send('Bienvenidos a typescript')
-			}
-		)
+		this.app.use('/', PacienteRouter )
+		this.app.use('/', MedicoRouter)
+
 	}
 	public start(): void {
 
-		this.server=this.app.listen(
+		this.server = this.app.listen(
 			3000,
 			() => { console.log('El servidor está escuchando en el puerto 3000') }
 		)

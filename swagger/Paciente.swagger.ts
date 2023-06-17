@@ -4,8 +4,8 @@ export default {
      * 
      * @swagger
      * 
-     * /paciente:
-     * get:
+     * /crear_paciente:
+     * post:
      *      summary: Obtener mensaje de prueba
      *      responses:
      *             200:
