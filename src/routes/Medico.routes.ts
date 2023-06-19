@@ -1,6 +1,5 @@
-
-import { Router, Request, Response } from "express"
-import MedicoController from "../controllers/Medicocontroller"
+import { Router, Request, Response } from 'express'
+import MedicoController from '../controllers/MedicoController'
 
 class MedicoRouter {
 

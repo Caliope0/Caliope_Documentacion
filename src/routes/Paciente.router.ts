@@ -1,6 +1,5 @@
-import { Response, Request } from 'express'
-import { Router } from 'express'
-import PacienteController from '../controllers/Pacientecontroller'
+import { Router, Response, Request } from 'express'
+import PacienteController from '../controllers/PacienteController'
 
 class PacienteRouter {
 
@@ -34,4 +33,4 @@ class PacienteRouter {
 
     }
 }
-export default new PacienteRouter().router;
+export default new PacienteRouter().router

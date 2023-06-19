@@ -1,8 +1,8 @@
-import { Router, Response, Request } from "express";
-import FormularioController from "../controllers/formStructureController";
+import { Router, Response, Request } from 'express'
+import FormularioController from '../controllers/FormularioController'
 
 class FormularioRouter {
-  router: Router;
+  router: Router
   formularioController: FormularioController
 
   constructor() {
@@ -13,12 +13,12 @@ class FormularioRouter {
 
   private routes(): void {
     this.router.get(
-      '/formulario/:formulario',
+      '/formulario',
       (req: Request, res: Response) => {
-        this.formularioController.extractDefinition(req, res);
+        this.formularioController.obtenerDefinicion(req, res)
       }
-    );
+    )
   }
 }
 
-export default new FormularioRouter().router;
+export default new FormularioRouter().router

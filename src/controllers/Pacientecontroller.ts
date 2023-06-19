@@ -1,4 +1,4 @@
-import { Response, Request} from 'express'
+import { Response, Request } from 'express'
 import { PrismaClient } from '@prisma/client'
 
 class PacienteController {
@@ -39,6 +39,7 @@ class PacienteController {
             )
 
             res.json(paciente)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (e: any) {
             res.status(400)
             res.json({ error: e.message })

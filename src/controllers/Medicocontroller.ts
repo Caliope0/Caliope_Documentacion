@@ -1,4 +1,4 @@
-import { Request, Response, Application } from 'express'
+import { Request, Response } from 'express'
 import { PrismaClient } from '@prisma/client'
 
 class MedicoController {
@@ -9,8 +9,8 @@ class MedicoController {
         this.prisma = new PrismaClient
     }
 
-    async obtenerMedico(req:Request, res:Response){
-        const medicos=await this.prisma.medico.findMany()
+    async obtenerMedico(req: Request, res: Response) {
+        const medicos = await this.prisma.medico.findMany()
         res.json(medicos)
     }
     async crearMedico(req: Request, res: Response) {
@@ -38,6 +38,7 @@ class MedicoController {
             )
 
             res.json(medico)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (e: any) {
             res.status(400)
             res.json({ error: e.message })
