@@ -13,7 +13,7 @@ class FormularioRouter {
 
   private routes(): void {
     this.router.get(
-      '/formulario',
+      '/formulario/:formulario',
       (req: Request, res: Response) => {
         this.formularioController.obtenerDefinicion(req, res)
       }

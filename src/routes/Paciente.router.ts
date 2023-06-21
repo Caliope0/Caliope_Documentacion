@@ -17,7 +17,7 @@ class PacienteRouter {
     private routes(): void {
 
         this.router.get(
-            '/pacientes',
+            '/Paciente',
             (req: Request, res: Response) => {
                 this.pacienteController.obtenerPaciente(req, res)
 
@@ -25,7 +25,7 @@ class PacienteRouter {
         )
 
         this.router.post(
-            '/crear_pacientes',
+            '/crear_paciente',
             (req: Request, res: Response) => {
                 this.pacienteController.crearPaciente(req, res)
             }

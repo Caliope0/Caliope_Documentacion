@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable linebreak-style */
 import swaggerUi from 'swagger-ui-express'
 import { swaggerSpec } from './swagger.conf'
-import express, { Application, Request, Response, } from 'express'
+import express, { Application} from 'express'
 
 import MedicoRouter from './routes/Medico.routes'
 import PacienteRouter from './routes/Paciente.router'
 import CitaRouter from './routes/Cita.Router'
 import FormularioRouter from './routes/Formulario.router'
 import EspecialidadRouter from './routes/Especialidad.Router'
+import cors from 'cors'
 /**
  * 
  * @autor John Alejandro Zúñiga
@@ -30,6 +32,7 @@ class App {
 			swaggerUi.serve,
 			swaggerUi.setup(swaggerSpec)
 		)
+		this.app.use(cors())
 		this.router()
 	}
 	/** 
